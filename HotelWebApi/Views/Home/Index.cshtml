@@ -1,0 +1,160 @@
+﻿@section Scripts {
+    @Scripts.Render("~/Scripts/Skripta.js")
+}
+
+<div class="row" style="margin:auto; width:350px">
+
+    <div class="col-sm-10" id="regForm">
+        <form method="post" action="post/" id="registration">
+            <h3>Sign Up</h3>
+            <div class="form-group">
+                <label>Email:</label>
+                <input class="form-control" type="text" id="regEmail" />
+            </div>
+            <div class="form-group">
+                <label>Password:</label>
+                <input class="form-control" type="password" id="regPass" />
+            </div>
+            <div class="form-group">
+                <label>Repeat Password:</label>
+                <input class="form-control" type="password" id="regPass2" />
+            </div>
+            <div class="form-group">
+                <button type="submit" style="float:right; background-color: lawngreen; color:black;" class="btn btn-default">Sign Up</button>
+                <p id="info"></p>
+            </div>
+        </form>
+        <button id="jumpToLogin" type="submit" style="background-color: red; color:white; float: left" class="btn btn-default">Delete</button>
+        <br />
+        <br />
+        <br />
+        <a style="margin-left:80px" href="#" id=btnAlready name=" + stringId + ">Already signed in?</a>
+
+    </div>
+
+    <div class="col-sm-10" id="loginDiv">
+
+        <h3>Sign In</h3>
+        <br />
+        <div class="form-group">
+            <label>Email:</label>
+            <input style="float:right" class="form-control" type="text" id="loginEmail" />
+        </div>
+        <br />
+        <div class="form-group">
+            <label>Password:</label>
+            <input style="float:right" class="form-control" type="password" id="loginPass" />
+        </div>
+        <br />
+        <div class="form-group">
+            <button type="submit" id="loginBtn" style="margin-top:6%; background-color: lawngreen; color:black; float:right" class="btn btn-default">Sign In</button>
+        </div>
+
+        <button id="jumpToLogin" type="submit" style="background-color: red; color:white; float: left" class="btn btn-default">Delete</button>
+
+    </div>
+</div>
+
+<br />
+<div class="row">
+    <div class="text-left col-md-6">
+        <p id="loggedInParagraph"></p>
+    </div>
+
+    <div class="text-right col-md-6" id="logoutDiv">
+     
+        <button class="btn btn-default" style="background-color:red; color:white" id="logoutBtn">Log out</button>
+
+    </div>
+</div>
+
+<div id="sTrad" class="col-sm-12">
+    <div class="row hidden text-center" id="search" style="margin:auto; float:left; width:400px">
+        <h3><b>Search by number of rooms:</b></h3>
+        <br />
+        <label class="col-form-label col-sm-3" style="width: 200px; float: left" for="minSoba">Min: </label>
+        <input class="form-control col-sm-3" type="text" id="findInput1" style="width:100px; float:right" />
+        <br />
+        <br />
+        <label class="col-form-label col-sm-3" style="width: 200px; float: left" for="maxSoba">Max: </label>
+        <input class="form-control col-sm-3" type="text" id="findInput2" style="width:100px; float:right" />
+        <br />
+        <br />
+        <button id="findBtn" type="submit" class="btn btn-default" style="margin:auto;color: black; background-color:lightblue; width:150px">Search</button>
+    </div>
+
+    <div class="row hidden text-center" id="tradition" style="margin:auto; float:right; width:400px">
+        <h3>Hotel chains with the longest tradition:</h3>
+        <button type="submit" id="btnTradicija" class="btn btn-default" style="margin:auto; color: black; background-color:lightblue; width:100px">Load</button>
+        <br />
+        <br />
+        <p id="pFirst"></p>
+        <br />
+        <p id="pSecond"></p>
+    </div>
+</div>
+
+<br />
+<br />
+
+<hr />
+<div id="data" class="row text-center" style="margin:auto; width:600px">
+</div>
+
+
+<br />
+<br />
+
+<div class="row text-center" style="margin:auto">
+    <hr />
+    <form method="post" action="post/" id="create" class="hidden" style="margin: auto; width:600px">
+        <h3>Add new hotel</h3>
+        <div class="form-group">
+            <label class="col-sm-6 col-form-label" for="lanacId" style="float:left">Chain: </label>
+            <select class="form-control col-sm-4" id="createInput1select" style="float:right"></select>
+            <br />
+
+            <p id="validationMsgInput1" style="color:red"></p>
+        </div>
+        <br />
+        <div class="form-group">
+            <label class="col-sm-6 col-form-label" for="naziv" style="float:left">Name: </label>
+            <input class="form-control col-sm-4" type="text" id="createInput2" style="width:400px; float:right" />
+            <br />
+
+            <p id="validationMsgInput2" style="color:red"></p>
+        </div>
+        <br />
+        <div class="form-group">
+            <label class="col-sm-6 col-form-label" for="godina">Foundation year: </label>
+            <input class="form-control col-sm-4" type="number" id="createInput3" style="width: 100px; float: right" />
+            <br />
+
+            <p id="validationMsgInput3" style="color:red"></p>
+
+        </div>
+        <br />
+        <div class="form-group">
+            <label class="col-sm-6 col-form-label" for="brojSoba" style="float:left">Number of rooms: </label>
+            <input class="form-control col-sm-4" type="number" id="createInput4" style="width: 100px; float: right" />
+        </div>
+        <br />
+        <br />
+        <div class="form-group">
+            <label class="col-sm-6 col-form-label" for="brojZaposlenih" style="float:left">Number of employees: </label>
+            <input class="form-control col-sm-4" type="number" id="createInput5" style="width: 100px; float: right" />
+        </div>
+        <br />
+        <br />
+        <div class="row form-group" style="margin:auto; width:300px">
+
+            <button type="submit" class="btn btn-default" style="width:100px;color:black; background-color: lawngreen; float:right">Add</button>
+
+            <input id="giveUpBtn" type="button" class="btn btn-default" style="width: 100px; color:white; background-color: red; float:left" value="Delete" />
+
+        </div>
+    </form>
+
+</div>
+
+
